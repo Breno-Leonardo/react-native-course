@@ -1,5 +1,6 @@
 import {SafeAreaView, Text} from 'react-native';
 import styled from 'styled-components/native';
+import Login from './modules/login';
 
 const TextNew = styled.Text`
   font-size: 27px;
@@ -9,8 +10,7 @@ const TextNew = styled.Text`
 const App = () => {
   return ( 
     <SafeAreaView>
-      <Text>Testando</Text>
-      <TextNew>Test </TextNew>
+     <Login></Login>
     </SafeAreaView>
   );
 }
