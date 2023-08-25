@@ -1,19 +1,16 @@
 import {SafeAreaView, Text} from 'react-native';
 import styled from 'styled-components/native';
 import Login from './modules/login';
-
-const TextNew = styled.Text`
-  font-size: 27px;
-  color: red;
-`;
+import Modal from './shared/components/modal/Modal';
+import {useState} from 'react';
+import Button from './shared/components/button/Button';
 
 const App = () => {
-  return ( 
+  
+  return (
     <SafeAreaView>
-     <Login></Login>
+      <Login></Login>
     </SafeAreaView>
   );
-}
+};
 export default App;
-
-
