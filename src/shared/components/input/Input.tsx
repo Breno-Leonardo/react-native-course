@@ -22,7 +22,7 @@ const Input = ({...props}: InputProps) => {
     setCurrentSecure(!currentSecure);
   };
   return (
-    <DisplayFlexColumn margin={props.margin}>
+    <DisplayFlexColumn customMargin={props.margin}>
       {props.title ? (
         <Text
           margin="0px 0px 4px 8px"
@@ -36,6 +36,7 @@ const Input = ({...props}: InputProps) => {
       <View>
         <ContainerInput
           {...props}
+          margin={props.margin}
           isError={props.errorMessage}
           secureTextEntry={currentSecure}></ContainerInput>
         {props.secureTextEntry ? (
