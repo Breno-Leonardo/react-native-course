@@ -5,7 +5,9 @@ import {Icon} from '../../icon/Icon';
 export const ContainerModal = styled.View`
   background-color: ${theme.colors.neutralTheme.white};
   border-radius: 16px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 16px;
   margin: 16px;
   z-index: 9;

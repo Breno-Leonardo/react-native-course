@@ -13,7 +13,6 @@ import Text from '../text/Text';
 import {theme} from '../../themes/theme';
 import {textTypes} from '../text/textTypes';
 import Button from '../button/Button';
-import DropShadow from 'react-native-drop-shadow';
 
 interface ModalProps extends ModalPropsReactNative {
   title: string;
@@ -40,7 +39,7 @@ const Modal = (props: ModalProps) => {
             type={textTypes.PARAGRAPH_SEMI_BOLD}>
             {props.title}
           </Text>
-          <Text>{props.text}</Text>
+          <Text margin="0px 0px 12px 0px" >{props.text}</Text>
 
           <Button title="OK" onPress={props.onCloseModal}></Button>
           <IconCloseModal name="cross" onPress={props.onCloseModal}></IconCloseModal>
