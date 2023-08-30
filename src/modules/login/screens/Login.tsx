@@ -1,15 +1,16 @@
-import {NativeSyntheticEvent, TextInputChangeEventData, View} from 'react-native';
+import { View} from 'react-native';
 import {ContainerLogin, ImageLogo} from '../styles/login.styles';
 import Input from '../../../shared/components/input/Input';
 import Button from '../../../shared/components/button/Button';
-import Text from '../../../shared/components/text/Text';
-import {theme} from '../../../shared/themes/theme';
-import {grayTheme} from '../../../shared/themes/colors';
-import axios from 'axios';
-import {useState} from 'react';
+
 import {useLogin} from '../hooks/useLogin';
+import { useEffect } from 'react';
+import { getAuthorizationToken, setAuthorizationToken } from '../../../shared/functions/connection/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AUTHORIZATION_KEY } from '../../../shared/constants/constants';
 
 const Login = () => {
+  
   const {
     email,
     password,
@@ -20,6 +21,9 @@ const Login = () => {
     handleOnPress,
   } = useLogin();
 
+  
+  
+  
   return (
     <View>
       <ContainerLogin>
