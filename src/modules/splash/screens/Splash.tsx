@@ -25,7 +25,7 @@ const Splash = () => {
         });
 
         if (returnRequest) {
-          navigateTo(ROUTES.HOME);
+          navigateTo(ROUTES.TAB);
         } else {
           navigateTo(ROUTES.LOGIN);
         }

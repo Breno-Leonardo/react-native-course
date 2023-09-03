@@ -72,7 +72,7 @@ export const useRequest = () => {
             await AsyncStorage.setItem(AUTHORIZATION_KEY,result.accessToken)
         }
         
-        navigateTo(ROUTES.HOME);
+        navigateTo(ROUTES.TAB);
       })
       .catch(err => {
         setModal({

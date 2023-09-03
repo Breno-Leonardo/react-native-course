@@ -1,25 +1,27 @@
-import { NavigationProp, ParamListBase, useNavigation } from "@react-navigation/native";
+import {NavigationProp, ParamListBase, useNavigation} from '@react-navigation/native';
 
 export const useNavigate = () => {
   const {reset, navigate} = useNavigation<NavigationProp<ParamListBase>>();
 
-  const navigateTo=(name:string,hasHistory?:boolean)=>{
-    
-    if(hasHistory){
-      navigate(name)
-    }
-    else{
+  const navigateTo = (name: string, hasHistory?: boolean, params?:any,) => {
+    if (hasHistory) {
+      if (params) {
+        navigate(name, params)
+      } else {
+        navigate(name);
+      }
+    } else {
       reset({
         index: 0,
         routes: [{name: name}],
       });
     }
-  }
+  };
 
-  return{
+  return {
     reset,
-    navigateTo
-  }
+    navigateTo,
+  };
 };
 
 export default useNavigate;
