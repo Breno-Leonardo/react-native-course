@@ -11,6 +11,7 @@ import Profile from './modules/profile';
 import Orders from './modules/orders';
 import Product from './modules/product';
 import Cart from './modules/cart';
+import SearchProduct from './modules/searchProduct';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export enum ROUTES {
   ORDERS = 'Orders',
   PRODUCT = 'Product',
   CART= 'Cart',
+  SEARCH_PRODUCT = 'SearchProduct',
 }
 const Tab = createBottomTabNavigator();
 
@@ -44,6 +46,9 @@ const TabNavigation = () => {
           else if (route.name === 'Cart') {
             iconName = 'cart'; 
           }
+          else if (route.name === 'SearchProduct') {
+            iconName = 'search'; 
+          }
 
           return <Icon name={iconName} size={20} color={color}></Icon>;
         },
@@ -62,6 +67,11 @@ const TabNavigation = () => {
       <Tab.Screen name={ROUTES.PROFILE} component={Profile} options={{headerShown: false}} />
       <Tab.Screen name={ROUTES.ORDERS} component={Orders} options={{headerShown: false}} />
       <Tab.Screen name={ROUTES.CART} component={Cart} options={{headerShown: false}} />
+      <Tab.Screen
+        name={ROUTES.SEARCH_PRODUCT}
+        component={SearchProduct}
+        options={{ title: 'Buscar', headerShown: false }}
+      />
     </Tab.Navigator>
   );
 };

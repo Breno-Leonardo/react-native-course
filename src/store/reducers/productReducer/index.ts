@@ -1,23 +1,34 @@
-import {PayloadAction, createSlice} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { PaginationType } from '../../../shared/types/paginationType';
 import { ProductType } from '../../../shared/types/productType';
 
-interface productStore {
+interface ProductStore {
   products: ProductType[];
+  searchProducts?: PaginationType<ProductType[]>;
 }
-const initialState: productStore = {
+
+const initialState: ProductStore = {
   products: [],
+  searchProducts: undefined,
 };
+
 export const productSlice = createSlice({
   name: 'productReducer',
   initialState,
-
   reducers: {
-    setProductAction: (state, action:PayloadAction<ProductType[]>) => {
+    setProductsAction: (state, action: PayloadAction<ProductType[]>) => {
       state.products = action.payload;
+    },
+    setSearchProductsAction: (
+      state,
+      action: PayloadAction<PaginationType<ProductType[]> | undefined>,
+    ) => {
+      state.searchProducts = action.payload;
     },
   },
 });
 
-export const {setProductAction} = productSlice.actions;
+export const { setProductsAction, setSearchProductsAction } = productSlice.actions;
 
 export default productSlice.reducer;
